@@ -12,6 +12,14 @@ Mini Apps platform using the following technologies:
 > This boilerplate was created using [pnpm](https://pnpm.io/). Therefore, it is required to use
 > it for this project as well.
 
+## Run Locally
+1. Run ngrok
+```bash
+ngrok http 5173
+```
+2. Copy forwarding url
+3. Edit Bot Url in BotFather
+
 ## First Start
 
 If you have just cloned this template, you should install the project dependencies using the
