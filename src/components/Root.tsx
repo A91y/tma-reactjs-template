@@ -36,7 +36,23 @@ const ErrorBoundarySDK: FC<{ error: unknown }> = ({ error }) => (
 const Loading: FC = () => <div>Application is loading</div>;
 
 const Inner: FC = () => {
-  const launchParams = useLaunchParams();
+  var launchParams: any;
+  try{
+    launchParams = useLaunchParams();
+  }
+  catch(e){
+    console.log(e);
+    // Set default launchParams
+    launchParams = {
+      platform: 'web',
+      showSettings: false,
+      version: '1.0.0',
+      botInline: false,
+      startParam: 'debug',
+      data: {},
+      themeParams: {},
+    };
+  }
 
   const manifestUrl = useMemo(() => {
     return new URL('tonconnect-manifest.json', window.location.href).toString();
